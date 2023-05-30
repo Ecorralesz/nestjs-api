@@ -1,13 +1,13 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { Logger } from '@nestjs/common'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const logger = new Logger();
 
+  app.enableCors(); // Enable CORS for all routes
 
   await app.listen(3000);
-  logger.log(`Server is running in ${ await app.getUrl() }`)
+  "server running"
 }
+
 bootstrap();
