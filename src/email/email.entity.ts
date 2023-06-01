@@ -9,7 +9,7 @@ export class Email {
   @Column()
   subject: string;
 
-  @Column()
+  @Column({ length: 10000 })
   markdown: string;
 
 }
